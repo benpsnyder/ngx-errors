@@ -1,24 +1,36 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "angularCompilerOptions": {
-    "genDir": "aot",
-    "skipTemplateCodegen": true,
-    "skipMetadataEmit": false
-  },
+  "compileOnSave": false,
   "compilerOptions": {
-    "declaration": true,
-    "target": "es5",
-    "module": "es2015",
-    "moduleResolution": "node",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "ngxerrors": [
+        "dist/ngxerrors/ngxerrors",
+        "dist/ngxerrors"
+      ]
+    },
     "sourceMap": true,
-    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "outDir": "dist",
-    "removeComments": false,
-    "noImplicitAny": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "lib": ["dom", "es2015", "es2016"]
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
   },
-  "files": [
-    "index.ts"
-  ]
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false
+  }
 }
