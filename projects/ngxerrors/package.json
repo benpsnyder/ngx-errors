@@ -1,6 +1,6 @@
 {
-  "name": "@hackages/ngxerrors",
-  "version": "12.0.0",
+  "name": "@benpsnyder/ngxerrors",
+  "version": "12.0.1",
   "description": "A declarative validation module for reactive forms",
   "author": "Hackages",
   "license": "MIT",
@@ -9,8 +9,8 @@
     "type": "git"
   },
   "peerDependencies": {
-    "@angular/common": ">^8.0.0",
-    "@angular/core": ">^8.0.0",
-    "@angular/forms": ">^8.0.0"
+    "@angular/common": "^8.0.0 || ^13.0.0",
+    "@angular/core": "^8.0.0 || ^13.0.0",
+    "@angular/forms": "^8.0.0 || ^13.0.0"
   }
 }
