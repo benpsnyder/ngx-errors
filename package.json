@@ -55,6 +55,7 @@
     "@nrwl/cli": "13.3.0-beta.8",
     "@nrwl/cypress": "13.3.0-beta.8",
     "@nrwl/jest": "13.3.0-beta.8",
+    "@nrwl/nx-plugin": "next",
     "@nrwl/tao": "13.3.0-beta.8",
     "@nrwl/workspace": "13.3.0-beta.8",
     "@types/jest": "27.0.2",
