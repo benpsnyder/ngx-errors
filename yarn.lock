@@ -9949,6 +9949,7 @@ __metadata:
     "@angular/platform-browser-dynamic": ^9.1.13
     "@angular/router": ^9.1.13
     "@nrwl/angular": 8.4.8
+    "@nrwl/cli": 8.4.8
     "@nrwl/cypress": 8.4.8
     "@nrwl/jest": 8.4.8
     "@nrwl/tao": 8.4.8
