@@ -5,16 +5,6 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@angular-devkit/architect@npm:0.801.1":
-  version: 0.801.1
-  resolution: "@angular-devkit/architect@npm:0.801.1"
-  dependencies:
-    "@angular-devkit/core": 8.1.1
-    rxjs: 6.4.0
-  checksum: 84825b1de2a6437cef934acc52de6adf6b50d56150ecb93581612a7e3b63e8c8489739b5c486961b81350ef5d466dcce91a7ab6ac285231698a7475d664e29a8
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/architect@npm:0.901.15, @angular-devkit/architect@npm:~0.901.0":
   version: 0.901.15
   resolution: "@angular-devkit/architect@npm:0.901.15"
@@ -129,19 +119,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:8.1.1":
-  version: 8.1.1
-  resolution: "@angular-devkit/core@npm:8.1.1"
-  dependencies:
-    ajv: 6.10.0
-    fast-json-stable-stringify: 2.0.0
-    magic-string: 0.25.3
-    rxjs: 6.4.0
-    source-map: 0.7.3
-  checksum: cf4dee8a02a50a1f079576db043c93eb9682fbec2bd22f8a62cdd079fd65651c4c007bf3d75909c65ddd04f4c1c423a3c11f5b19073b0b54f5cf485ed3a62f5e
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/core@npm:9.1.15, @angular-devkit/core@npm:~9.1.0":
   version: 9.1.15
   resolution: "@angular-devkit/core@npm:9.1.15"
@@ -152,16 +129,6 @@ __metadata:
     rxjs: 6.5.4
     source-map: 0.7.3
   checksum: 6bd22621f2e79d9b281238baa31110cba2f94699d925d241bcb534a09843c8ead35886390632c1e2a0b73323f093310204a9b15087fe0e2950a033ec2a643f21
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/schematics@npm:8.1.1":
-  version: 8.1.1
-  resolution: "@angular-devkit/schematics@npm:8.1.1"
-  dependencies:
-    "@angular-devkit/core": 8.1.1
-    rxjs: 6.4.0
-  checksum: 21d22a695940e39d0d6bf9871f32a642f984da822af13dd788da4d6b14ea260677bc27ce32fd0f868c6c6d22321fb025a723347fb3856af39a3884c4cb359eb1
   languageName: node
   linkType: hard
 
@@ -2109,21 +2076,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/tao@npm:8.4.8":
-  version: 8.4.8
-  resolution: "@nrwl/tao@npm:8.4.8"
-  dependencies:
-    "@angular-devkit/architect": 0.801.1
-    "@angular-devkit/core": 8.1.1
-    "@angular-devkit/schematics": 8.1.1
-    inquirer: ^6.3.1
-    minimist: ^1.2.0
-  bin:
-    tao: ./index.js
-  checksum: 9aa582ba4ae5e7e271b4246bc75b4df46e013486a1defe07d8b571c83321096feb6276a1f73f54d632cb380833c1c7708c202d7614f5d098d5b34ab085006d7e
-  languageName: node
-  linkType: hard
-
 "@nrwl/tao@npm:9.8.0":
   version: 9.8.0
   resolution: "@nrwl/tao@npm:9.8.0"
@@ -2758,18 +2710,6 @@ __metadata:
   peerDependencies:
     ajv: ^6.9.1
   checksum: 7dc5e5931677a680589050f79dcbe1fefbb8fea38a955af03724229139175b433c63c68f7ae5f86cf8f65d55eb7c25f75a046723e2e58296707617ca690feae9
-  languageName: node
-  linkType: hard
-
-"ajv@npm:6.10.0":
-  version: 6.10.0
-  resolution: "ajv@npm:6.10.0"
-  dependencies:
-    fast-deep-equal: ^2.0.1
-    fast-json-stable-stringify: ^2.0.0
-    json-schema-traverse: ^0.4.1
-    uri-js: ^4.2.2
-  checksum: b4c8b35f59e3789557b11efc73e139d9afd3c06172dd0c5b2b9fcd3239bcc399185559611df02f74efe1dc501f7c7561402f000125ba4b3a360cc02df6969144
   languageName: node
   linkType: hard
 
@@ -6021,13 +5961,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-deep-equal@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "fast-deep-equal@npm:2.0.1"
-  checksum: b701835a87985e0ec4925bdf1f0c1e7eb56309b5d12d534d5b4b69d95a54d65bb16861c081781ead55f73f12d6c60ba668713391ee7fbf6b0567026f579b7b0b
-  languageName: node
-  linkType: hard
-
 "fast-deep-equal@npm:^3.1.1":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -6045,13 +5978,6 @@ __metadata:
     merge2: ^1.3.0
     micromatch: ^4.0.4
   checksum: 2f4708ff112d2b451888129fdd9a0938db88b105b0ddfd043c064e3c4d3e20eed8d7c7615f7565fee660db34ddcf08a2db1bf0ab3c00b87608e4719694642d78
-  languageName: node
-  linkType: hard
-
-"fast-json-stable-stringify@npm:2.0.0":
-  version: 2.0.0
-  resolution: "fast-json-stable-stringify@npm:2.0.0"
-  checksum: 5f776089e60a20ccdf5fd17c90590a4bb7c04c4240b2ffde1caad3949f7876a57af7094323dcb432fa6534367768ac6c6b5433a16c5241d0e2cdf0b51b7d4c9f
   languageName: node
   linkType: hard
 
@@ -9139,15 +9065,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:0.25.3":
-  version: 0.25.3
-  resolution: "magic-string@npm:0.25.3"
-  dependencies:
-    sourcemap-codec: ^1.4.4
-  checksum: 21b4149f4465f3edbefae6e4a93eba8889396874fe49aa62fc24016571c803d6987e334f0a0bdbdeddde919d67469cfa59339e66b8aebac412cfbdc9d1cb16b1
-  languageName: node
-  linkType: hard
-
 "magic-string@npm:0.25.7, magic-string@npm:^0.25.0":
   version: 0.25.7
   resolution: "magic-string@npm:0.25.7"
@@ -9809,7 +9726,7 @@ __metadata:
     "@nrwl/cli": 9.8.0
     "@nrwl/cypress": 9.8.0
     "@nrwl/jest": 9.8.0
-    "@nrwl/tao": 8.4.8
+    "@nrwl/tao": 9.8.0
     "@nrwl/workspace": 9.8.0
     "@types/jest": 25.1.4
     "@types/node": ^12.11.1
@@ -12252,15 +12169,6 @@ __metadata:
   dependencies:
     aproba: ^1.1.1
   checksum: c4541e18b5e056af60f398f2f1b3d89aae5c093d1524bf817c5ee68bcfa4851ad9976f457a9aea135b1d0d72ee9a91c386e3d136bcd95b699c367cd09c70be53
-  languageName: node
-  linkType: hard
-
-"rxjs@npm:6.4.0":
-  version: 6.4.0
-  resolution: "rxjs@npm:6.4.0"
-  dependencies:
-    tslib: ^1.9.0
-  checksum: 27e7e42932b810aa41ba67784d4110ba9a36108363ecb6eea3784bd3ecefda20c0394305a9ea3bab9f2697158e33b68aecce464074fd2a8c16dad1b49bc98bee
   languageName: node
   linkType: hard
 

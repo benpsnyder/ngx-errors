@@ -55,7 +55,7 @@
     "@nrwl/cli": "9.8.0",
     "@nrwl/cypress": "9.8.0",
     "@nrwl/jest": "9.8.0",
-    "@nrwl/tao": "8.4.8",
+    "@nrwl/tao": "9.8.0",
     "@nrwl/workspace": "9.8.0",
     "@types/jest": "25.1.4",
     "@types/node": "^12.11.1",
