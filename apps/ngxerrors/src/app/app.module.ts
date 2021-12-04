@@ -13,6 +13,6 @@ import { AppComponent } from './app.component';
   imports: [BrowserModule],
   exports: [...dependencies],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

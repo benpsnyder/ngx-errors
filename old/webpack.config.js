@@ -4,16 +4,16 @@ const webpack = require('webpack');
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-    }
-  })
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    },
+  }),
 ];
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push(
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: false
+      debug: false,
     })
   );
 } else {
@@ -42,50 +42,50 @@ module.exports = {
       hash: true,
       timings: true,
       modules: true,
-      warnings: true
+      warnings: true,
     },
     publicPath: '/build/',
-    port: 3000
+    port: 3000,
   },
   devtool: 'sourcemap',
   entry: {
-    app: ['zone.js/dist/zone', './example/app/main.ts']
+    app: ['zone.js/dist/zone', './example/app/main.ts'],
   },
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
     publicPath: '/build/',
-    path: path.resolve(__dirname, 'example/build')
+    path: path.resolve(__dirname, 'example/build'),
   },
   node: {
     console: false,
     global: true,
     process: true,
     Buffer: false,
-    setImmediate: false
+    setImmediate: false,
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.scss$/,
-        loaders: ['raw-loader', 'sass-loader']
+        loaders: ['raw-loader', 'sass-loader'],
       },
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
   },
   stats: {
     colors: false,
@@ -95,7 +95,7 @@ module.exports = {
     chunks: true,
     chunkModules: true,
     modules: true,
-    children: true
+    children: true,
   },
   optimization: {
     splitChunks: {
@@ -104,10 +104,10 @@ module.exports = {
           chunks: 'all',
           name: 'vendor',
           test: /[\\/]node_modules[\\/]/,
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
-  plugins
+  plugins,
 };

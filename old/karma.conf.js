@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = config => {
+module.exports = (config) => {
   config.set({
     browsers: ['Chrome'],
     files: [
@@ -12,13 +12,13 @@ module.exports = config => {
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/zone.js/dist/long-stack-trace-zone.js',
-      { pattern: '**/*.spec.ts', watched: false }
+      { pattern: '**/*.spec.ts', watched: false },
     ],
     frameworks: ['jasmine'],
     mime: { 'text/x-typescript': ['ts'] },
     preprocessors: {
       '*.js': ['sourcemap'],
-      '**/*.spec.ts': ['sourcemap', 'webpack']
+      '**/*.spec.ts': ['sourcemap', 'webpack'],
     },
     reporters: ['spec'],
     webpack: {
@@ -27,28 +27,28 @@ module.exports = config => {
         rules: [
           {
             test: /\.html$/,
-            loaders: ['raw-loader']
+            loaders: ['raw-loader'],
           },
           {
             test: /\.scss$/,
-            loaders: ['raw-loader', 'sass-loader']
+            loaders: ['raw-loader', 'sass-loader'],
           },
           {
             test: /\.ts$/,
-            loaders: ['awesome-typescript-loader', 'angular2-template-loader']
-          }
-        ]
+            loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+          },
+        ],
       },
       plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.SourceMapDevToolPlugin({
           filename: null,
-          test: /\.(ts|js)($|\?)/i
-        })
+          test: /\.(ts|js)($|\?)/i,
+        }),
       ],
       resolve: {
-        extensions: ['.ts', '.js']
-      }
-    }
+        extensions: ['.ts', '.js'],
+      },
+    },
   });
 };

@@ -92,9 +92,7 @@ The `ngxErrors` directive works by dynamically fetching your FormControl under-t
 
 ```html
 <input type="text" formControlName="username" />
-<div ngxErrors="username">
-  // ...
-</div>
+<div ngxErrors="username">// ...</div>
 ```
 
 This needs to be on a parent container that will encapsulate child `ngxError` directives.
@@ -106,9 +104,7 @@ The `ngxError` directive takes either a `string` or `array` as arguments. The ar
 ```html
 <input type="text" formControlName="username" />
 <div ngxErrors="username">
-  <div ngxError="minlength">
-    Min length is 5
-  </div>
+  <div ngxError="minlength">Min length is 5</div>
 </div>
 ```
 
@@ -132,9 +128,7 @@ The `when` directive takes either a `string` or `array` as arguments. It allows 
 ```html
 <input type="text" formControlName="username" />
 <div ngxErrors="username">
-  <div ngxError="minlength" when="dirty">
-    Min length is 5
-  </div>
+  <div ngxError="minlength" when="dirty">Min length is 5</div>
 </div>
 ```
 
@@ -143,9 +137,7 @@ It also comes in array format for multiple rules:
 ```html
 <input type="text" formControlName="username" />
 <div ngxErrors="username">
-  <div ngxError="minlength" [when]="['dirty', 'touched']">
-    Min length is 5
-  </div>
+  <div ngxError="minlength" [when]="['dirty', 'touched']">Min length is 5</div>
 </div>
 ```
 
@@ -233,9 +225,7 @@ The `hasError` method informs you if your control has the given error. This can 
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -249,9 +239,7 @@ You can optionally pass in conditions in which to activate the error.
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -269,9 +257,7 @@ You can also use the "catch-all" selector to get the state of your entire contro
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -287,9 +273,7 @@ The `isValid` method informs you if a your control is valid, or a property is va
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -303,9 +287,7 @@ You can optionally pass in conditions in which to evaluate alongside the propert
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -323,9 +305,7 @@ You can also use the "catch-all" selector to check if the control is valid, with
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
 </div>
 ```
 
@@ -341,12 +321,8 @@ The `hasErrors` property returns `true` if your control has any number of errors
 </div>
 
 <div ngxErrors="username" #myError="ngxErrors">
-  <div ngxError="required" when="dirty">
-    Field is required
-  </div>
-  <div ngxError="minlength" when="dirty">
-    Min length is 5
-  </div>
+  <div ngxError="required" when="dirty">Field is required</div>
+  <div ngxError="minlength" when="dirty">Min length is 5</div>
 </div>
 ```
 

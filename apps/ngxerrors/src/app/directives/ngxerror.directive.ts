@@ -6,7 +6,7 @@ import {
   Inject,
   Input,
   OnDestroy,
-  OnInit
+  OnInit,
 } from '@angular/core';
 import { combineLatest, Observable, Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
@@ -15,7 +15,7 @@ import { NgxErrorsDirective } from './ngxerrors.directive';
 import { toArray } from './utils/toArray';
 
 @Directive({
-  selector: '[ngxError]'
+  selector: '[ngxError]',
 })
 export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
   @Input()
@@ -51,7 +51,7 @@ export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
     );
 
     const states = this.states$.pipe(
-      map(states => this.rules.every(rule => !!~states.indexOf(rule)))
+      map((states) => this.rules.every((rule) => !!~states.indexOf(rule)))
     );
 
     this.subscription = combineLatest(states, errors).subscribe(
@@ -63,7 +63,7 @@ export class NgxErrorDirective implements OnInit, OnDestroy, DoCheck {
 
   ngDoCheck() {
     this._states$.next(
-      this.rules.filter(rule => (this.ngxErrors.control as any)[rule])
+      this.rules.filter((rule) => (this.ngxErrors.control as any)[rule])
     );
   }
 

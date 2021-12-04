@@ -3,7 +3,7 @@ import {
   Directive,
   Input,
   OnChanges,
-  OnDestroy
+  OnDestroy,
 } from '@angular/core';
 import { AbstractControl, FormGroupDirective } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
@@ -12,7 +12,7 @@ import { toArray } from './utils/toArray';
 
 @Directive({
   selector: '[ngxErrors]',
-  exportAs: 'ngxErrors'
+  exportAs: 'ngxErrors',
 })
 export class NgxErrorsDirective implements OnChanges, OnDestroy, AfterViewInit {
   @Input('ngxErrors') private readonly controlName: string;

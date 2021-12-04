@@ -14,7 +14,7 @@ describe('ngxerrors', () => {
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
+  platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { Component, DebugElement } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -54,9 +54,7 @@ TestBed.initTestEnvironment(
         </div>
       </div>
       <div ngxErrors="prop" #prop="ngxErrors">
-        <div ngxError="required" when="dirty">
-          Required
-        </div>
+        <div ngxError="required" when="dirty">Required</div>
         <div
           class="errorMinLength"
           [ngxError]="['minlength', 'maxlength']"
@@ -67,14 +65,14 @@ TestBed.initTestEnvironment(
         </div>
       </div>
     </form>
-  `
+  `,
 })
 class AppComponent {
   form = this.fb.group({
     prop: [
       '',
-      [Validators.required, Validators.minLength(5), Validators.maxLength(10)]
-    ]
+      [Validators.required, Validators.minLength(5), Validators.maxLength(10)],
+    ],
   });
   constructor(private fb: FormBuilder) {}
 }
@@ -87,7 +85,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, AppModule],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
     });
 
     fixture = TestBed.createComponent(AppComponent);
@@ -100,11 +98,11 @@ describe('Directives: ngxErrors, ngxError, when', () => {
   it('should hide all ngxError directives on load', () => {
     const elements = el.queryAll(By.directive(NgxErrorDirective));
     expect(
-      elements.every(element => element.nativeElement.hasAttribute('hidden'))
+      elements.every((element) => element.nativeElement.hasAttribute('hidden'))
     ).toBe(true);
   });
 
-  it('should show ngxError[required] when required is true and dirty', async done => {
+  it('should show ngxError[required] when required is true and dirty', async (done) => {
     const element = el.queryAll(By.directive(NgxErrorDirective))[0];
 
     expect(component.form.get('prop').dirty).toBe(false);
@@ -125,7 +123,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     done();
   });
 
-  it('should show ngxError[minlength | maxlength] when either are true, touched and dirty', async done => {
+  it('should show ngxError[minlength | maxlength] when either are true, touched and dirty', async (done) => {
     const element = el.queryAll(By.directive(NgxErrorDirective))[1];
     expect(component.form.get('prop').dirty).toBe(false);
     expect(component.form.get('prop').touched).toBe(false);
@@ -157,8 +155,8 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     done();
   });
 
-  it('should provide a template ref API via ngxErrors exportAs', async done => {
-    const parse = name =>
+  it('should provide a template ref API via ngxErrors exportAs', async (done) => {
+    const parse = (name) =>
       JSON.parse(el.query(By.css(name)).nativeElement.textContent);
 
     await fixture.whenStable();
