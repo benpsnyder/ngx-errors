@@ -1,7 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "ngxerrors": "apps/ngxerrors",
-    "ngxerrors-e2e": "apps/ngxerrors-e2e"
+    "ngxerrors-e2e": "e2e/ngxerrors",
+    "ngxerrors": "packages/ngxerrors"
   }
 }

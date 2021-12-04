@@ -2373,6 +2373,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/js@npm:13.3.0-beta.8":
+  version: 13.3.0-beta.8
+  resolution: "@nrwl/js@npm:13.3.0-beta.8"
+  dependencies:
+    "@nrwl/devkit": 13.3.0-beta.8
+    "@nrwl/jest": 13.3.0-beta.8
+    "@nrwl/linter": 13.3.0-beta.8
+    "@nrwl/workspace": 13.3.0-beta.8
+    chalk: 4.1.0
+    js-tokens: ^4.0.0
+  checksum: 4c6ef9e9c5e64b10e5254c650c7da33057ef363feea3b38221f4ec55b0907f9d09bbe106db0ffcee4bddf0dfb43b61c897da5c63b69ad6a7d4ee7138500d632d
+  languageName: node
+  linkType: hard
+
 "@nrwl/linter@npm:13.3.0-beta.8":
   version: 13.3.0-beta.8
   resolution: "@nrwl/linter@npm:13.3.0-beta.8"
@@ -9310,6 +9324,7 @@ __metadata:
     "@nrwl/cypress": 13.3.0-beta.8
     "@nrwl/eslint-plugin-nx": 13.3.0-beta.8
     "@nrwl/jest": 13.3.0-beta.8
+    "@nrwl/js": 13.3.0-beta.8
     "@nrwl/linter": 13.3.0-beta.8
     "@nrwl/nx-plugin": next
     "@nrwl/tao": 13.3.0-beta.8

@@ -1,0 +1,34 @@
+{
+  "root": "packages/ngxerrors",
+  "sourceRoot": "packages/ngxerrors/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ngxerrors",
+        "tsConfig": "packages/ngxerrors/tsconfig.lib.json",
+        "packageJson": "packages/ngxerrors/package.json",
+        "main": "packages/ngxerrors/src/index.ts",
+        "assets": ["packages/ngxerrors/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ngxerrors/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/ngxerrors"],
+      "options": {
+        "jestConfig": "packages/ngxerrors/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@benpsnyder/ngx-errors": ["packages/ngxerrors/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp", "**/*.spec.ts"]
 }
