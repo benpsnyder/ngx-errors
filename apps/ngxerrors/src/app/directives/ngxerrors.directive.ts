@@ -7,8 +7,8 @@ import {
 } from '@angular/core';
 import { AbstractControl, FormGroupDirective } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
-import { ErrorDetails, ErrorOptions } from './ngxerrors';
-import { toArray } from './utils/toArray';
+import { ErrorDetails, ErrorOptions } from '../ngxerrors';
+import { toArray } from '../utils/toArray';
 
 @Directive({
   selector: '[ngxErrors]',

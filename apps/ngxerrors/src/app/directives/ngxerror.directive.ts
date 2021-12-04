@@ -10,9 +10,9 @@ import {
 } from '@angular/core';
 import { combineLatest, Observable, Subject, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
-import { ErrorOptions } from './ngxerrors';
+import { ErrorOptions } from '../ngxerrors';
 import { NgxErrorsDirective } from './ngxerrors.directive';
-import { toArray } from './utils/toArray';
+import { toArray } from '../utils/toArray';
 
 @Directive({
   selector: '[ngxError]',
