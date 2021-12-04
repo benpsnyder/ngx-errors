@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {NgxErrorsDirective} from './directives/ngxerrors.directive';
-import {NgxErrorDirective} from './directives/ngxerror.directive';
+import { NgxErrorsDirective } from './directives/ngxerrors.directive';
+import { NgxErrorDirective } from './directives/ngxerror.directive';
 
 const dependencies = [NgxErrorsDirective, NgxErrorDirective];
 

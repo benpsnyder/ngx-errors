@@ -1,4 +1,4 @@
-import {ErrorOptions} from '../../../../../old/src/ngxerrors';
+import { ErrorOptions } from '..//ngxerrors';
 
 export const toArray = (value: ErrorOptions): string[] =>
   Array.isArray(value) ? value : [value];

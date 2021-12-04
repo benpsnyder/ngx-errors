@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = (config) => {
+module.exports = config => {
   config.set({
     browsers: ['Chrome'],
     files: [

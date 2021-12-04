@@ -11,22 +11,18 @@ describe('ngxerrors', () => {
   });
 });
 */
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
-import {Component, DebugElement} from '@angular/core';
-import {
-  FormBuilder,
-  Validators,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { Component, DebugElement } from '@angular/core';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
-import {AppModule} from '../../../ngxerrors/src/app/app.module';
-import {NgxErrorDirective} from '../../../ngxerrors/src/app/directives/ngxerror.directive';
+import { AppModule } from '../../../ngxerrors/src/app/app.module';
+import { NgxErrorDirective } from '../../../ngxerrors/src/app/directives/ngxerror.directive';
 
-import {By} from '@angular/platform-browser';
+import { By } from '@angular/platform-browser';
 
 TestBed.initTestEnvironment(
   BrowserDynamicTestingModule,
@@ -42,21 +38,32 @@ TestBed.initTestEnvironment(
         [ngClass]="{
           requiredVisibleAtRuntime: prop.hasError('required'),
           requiredVisibleWhenDirty: prop.hasError('required', ['dirty']),
-          requiredVisibleWhenDirtyTouched: prop.hasError('required', ['dirty', 'touched']),
+          requiredVisibleWhenDirtyTouched: prop.hasError('required', [
+            'dirty',
+            'touched'
+          ]),
           visibleAnyErrorDirtyTouched: prop.hasError('*', ['dirty', 'touched'])
-        }">
+        }"
+      />
       <div class="errorProps">
         <div class="errorProp1">{{ prop.errors | json }}</div>
         <div class="errorProp2">{{ prop.hasErrors | json }}</div>
         <div class="errorProp3">{{ prop.isValid('*', ['dirty']) | json }}</div>
-        <div class="errorProp4">{{ prop.isValid('required', ['dirty']) | json }}</div>
+        <div class="errorProp4">
+          {{ prop.isValid('required', ['dirty']) | json }}
+        </div>
       </div>
       <div ngxErrors="prop" #prop="ngxErrors">
         <div ngxError="required" when="dirty">
           Required
         </div>
-        <div class="errorMinLength" [ngxError]="['minlength', 'maxlength']" [when]="['dirty', 'touched']">
-          {{ prop.getError('minlength')?.requiredLength }} characters minimum, {{ prop.getError('maxlength')?.requiredLength }} characters maximum
+        <div
+          class="errorMinLength"
+          [ngxError]="['minlength', 'maxlength']"
+          [when]="['dirty', 'touched']"
+        >
+          {{ prop.getError('minlength')?.requiredLength }} characters minimum,
+          {{ prop.getError('maxlength')?.requiredLength }} characters maximum
         </div>
       </div>
     </form>
@@ -101,7 +108,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     const element = el.queryAll(By.directive(NgxErrorDirective))[0];
 
     expect(component.form.get('prop').dirty).toBe(false);
-    component.form.patchValue({prop: 'ngxErrors'});
+    component.form.patchValue({ prop: 'ngxErrors' });
     component.form.get('prop').markAsDirty();
     fixture.detectChanges();
     await fixture.whenStable();
@@ -109,7 +116,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(element.nativeElement.hasAttribute('hidden')).toBe(true);
     expect(component.form.get('prop').hasError('required')).toBe(false);
 
-    component.form.patchValue({prop: null});
+    component.form.patchValue({ prop: null });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(element.nativeElement.hasAttribute('hidden')).toBe(false);
@@ -122,7 +129,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     const element = el.queryAll(By.directive(NgxErrorDirective))[1];
     expect(component.form.get('prop').dirty).toBe(false);
     expect(component.form.get('prop').touched).toBe(false);
-    component.form.patchValue({prop: 'ngxErrors'});
+    component.form.patchValue({ prop: 'ngxErrors' });
     component.form.get('prop').markAsDirty();
     component.form.get('prop').markAsTouched();
     fixture.detectChanges();
@@ -133,14 +140,14 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(component.form.get('prop').hasError('minlength')).toBe(false);
     expect(component.form.get('prop').hasError('maxlength')).toBe(false);
 
-    component.form.patchValue({prop: 'ngx'});
+    component.form.patchValue({ prop: 'ngx' });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(element.nativeElement.hasAttribute('hidden')).toBe(false);
     expect(component.form.get('prop').hasError('minlength')).toBe(true);
     expect(component.form.get('prop').hasError('maxlength')).toBe(false);
 
-    component.form.patchValue({prop: 'ngxErrors!!!!!'});
+    component.form.patchValue({ prop: 'ngxErrors!!!!!' });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(element.nativeElement.hasAttribute('hidden')).toBe(false);
@@ -175,7 +182,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(parse('.errorProp3')).toBe(false);
     expect(parse('.errorProp4')).toBe(false);
 
-    component.form.patchValue({prop: 'ngxErrors'});
+    component.form.patchValue({ prop: 'ngxErrors' });
     component.form.get('prop').markAsDirty();
     component.form.get('prop').markAsTouched();
     fixture.detectChanges();
@@ -187,7 +194,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(
       element.nativeElement.classList.contains('requiredVisibleAtRuntime')
     ).toBe(false);
-    component.form.patchValue({prop: ''});
+    component.form.patchValue({ prop: '' });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(
@@ -201,7 +208,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(parse('.errorProp3')).toBe(false);
     expect(parse('.errorProp4')).toBe(false);
 
-    component.form.patchValue({prop: 'ngx'});
+    component.form.patchValue({ prop: 'ngx' });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(
@@ -227,7 +234,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
     expect(parse('.errorProp3')).toBe(false);
     expect(parse('.errorProp4')).toBe(true);
 
-    component.form.patchValue({prop: 'ngxErrors!!!!!'});
+    component.form.patchValue({ prop: 'ngxErrors!!!!!' });
     fixture.detectChanges();
     await fixture.whenStable();
     expect(

@@ -5,6 +5,6 @@ export default {
   exports: 'named',
   moduleName: 'ngxerrors',
   globals: {
-    'typescript': 'ts'
+    typescript: 'ts'
   }
 };

@@ -5,10 +5,10 @@ import {
   OnChanges,
   OnDestroy
 } from '@angular/core';
-import {AbstractControl, FormGroupDirective} from '@angular/forms';
-import {BehaviorSubject} from 'rxjs';
-import {ErrorDetails, ErrorOptions} from './ngxerrors';
-import {toArray} from './utils/toArray';
+import { AbstractControl, FormGroupDirective } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
+import { ErrorDetails, ErrorOptions } from './ngxerrors';
+import { toArray } from './utils/toArray';
 
 @Directive({
   selector: '[ngxErrors]',
@@ -71,7 +71,7 @@ export class NgxErrorsDirective implements OnChanges, OnDestroy, AfterViewInit {
     this.ready = true;
     if (!errors) return;
     for (const errorName in errors) {
-      this.subject$.next({control, errorName});
+      this.subject$.next({ control, errorName });
     }
   }
   ngOnInit() {
