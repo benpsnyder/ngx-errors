@@ -1,3 +1,16 @@
+/*
+import { getGreeting } from '../support/app.po';
+
+
+
+describe('ngxerrors', () => {
+  beforeEach(() => cy.visit('/'));
+
+  it('should display welcome message', () => {
+    getGreeting().contains('Welcome to ngxerrors!');
+  });
+});
+*/
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
@@ -6,13 +19,12 @@ import {
 import {Component, DebugElement} from '@angular/core';
 import {
   FormBuilder,
-  FormGroup,
   Validators,
   ReactiveFormsModule
 } from '@angular/forms';
 
-import {NgxErrorsModule} from '../ngxerrors.module';
-import {NgxErrorDirective} from '../ngxerror.directive';
+import {AppModule} from '../../../ngxerrors/src/app/app.module';
+import {NgxErrorDirective} from '../../../ngxerrors/src/app/directives/ngxerror.directive';
 
 import {By} from '@angular/platform-browser';
 
@@ -67,7 +79,7 @@ describe('Directives: ngxErrors, ngxError, when', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, NgxErrorsModule],
+      imports: [ReactiveFormsModule, AppModule],
       declarations: [AppComponent]
     });
 
