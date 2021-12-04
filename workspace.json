@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "ngxerrors": "apps/ngxerrors",
+    "ngxerrors-e2e": "apps/ngxerrors-e2e"
+  }
+}

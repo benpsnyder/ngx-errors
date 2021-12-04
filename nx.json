@@ -1,7 +1,7 @@
 {
   "npmScope": "snyder",
   "implicitDependencies": {
-    "angular.json": "*",
+    "workspace.json": "*",
     "package.json": "*",
     "tslint.json": "*",
     "nx.json": "*",
@@ -30,7 +30,7 @@
     }
   },
   "affected": {
-    "defaultBase": "main"
+    "defaultBase": "master"
   },
   "targetDependencies": {
     "build": [

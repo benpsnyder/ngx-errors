@@ -1,0 +1,29 @@
+{
+  "root": "apps/ngxerrors-e2e",
+  "sourceRoot": "apps/ngxerrors-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ngxerrors-e2e/cypress.json",
+        "tsConfig": "apps/ngxerrors-e2e/tsconfig.e2e.json",
+        "devServerTarget": "ngxerrors:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ngxerrors:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@angular-devkit/build-angular:tslint",
+      "options": {
+        "tsConfig": ["apps/ngxerrors-e2e/tsconfig.e2e.json"],
+        "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**/*"]
+      }
+    }
+  },
+  "implicitDependencies": ["ngxerrors"],
+  "tags": []
+}
