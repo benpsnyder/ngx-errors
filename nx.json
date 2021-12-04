@@ -9,10 +9,19 @@
   },
   "projects": {
     "ngxerrors-e2e": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["ngxerrors"]
     },
     "ngxerrors": {
       "tags": []
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   }
 }

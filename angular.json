@@ -82,7 +82,7 @@
               "apps/ngxerrors/tsconfig.app.json",
               "apps/ngxerrors/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ngxerrors/**"]
+            "exclude": ["**/node_modules/**", "!apps/ngxerrors/**/*"]
           }
         },
         "test": {
@@ -90,7 +90,8 @@
           "options": {
             "jestConfig": "apps/ngxerrors/jest.config.js",
             "tsConfig": "apps/ngxerrors/tsconfig.spec.json",
-            "setupFile": "apps/ngxerrors/src/test-setup.ts"
+            "setupFile": "apps/ngxerrors/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
@@ -117,7 +118,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["apps/ngxerrors-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**"]
+            "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**/*"]
           }
         }
       }
