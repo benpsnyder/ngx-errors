@@ -25,7 +25,9 @@
               "apps/ngxerrors/src/favicon.ico",
               "apps/ngxerrors/src/assets"
             ],
-            "styles": ["apps/ngxerrors/src/styles.scss"],
+            "styles": [
+              "apps/ngxerrors/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -39,7 +41,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -56,7 +57,10 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -82,7 +86,10 @@
               "apps/ngxerrors/tsconfig.app.json",
               "apps/ngxerrors/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ngxerrors/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ngxerrors/**/*"
+            ]
           }
         },
         "test": {
@@ -92,9 +99,13 @@
             "tsConfig": "apps/ngxerrors/tsconfig.spec.json",
             "setupFile": "apps/ngxerrors/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": [
+            "coverage/apps/ngxerrors"
+          ]
         }
-      }
+      },
+      "tags": []
     },
     "ngxerrors-e2e": {
       "root": "apps/ngxerrors-e2e",
@@ -117,24 +128,20 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ngxerrors-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**/*"]
+            "tsConfig": [
+              "apps/ngxerrors-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ngxerrors-e2e/**/*"
+            ]
           }
         }
-      }
+      },
+      "implicitDependencies": [
+        "ngxerrors"
+      ],
+      "tags": []
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    }
-  },
-  "defaultProject": "ngxerrors"
+  }
 }
