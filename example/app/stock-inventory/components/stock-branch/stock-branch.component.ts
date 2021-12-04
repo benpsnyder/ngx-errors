@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'stock-branch',
@@ -9,11 +9,19 @@ import {FormGroup} from '@angular/forms';
       <div formGroupName="store">
         <ng-container *ngIf="!isInput">
           <div>
-            <input type="text" placeholder="Branch ID" formControlName="branch">
+            <input
+              type="text"
+              placeholder="Branch ID"
+              formControlName="branch"
+            />
           </div>
 
           <div ngxErrors="store.branch">
-            <div class="error" ngxError="required" [when]="['dirty', 'touched']">
+            <div
+              class="error"
+              ngxError="required"
+              [when]="['dirty', 'touched']"
+            >
               Branch ID is required
             </div>
             <div class="error" ngxError="invalidBranch" when="dirty">
@@ -24,7 +32,7 @@ import {FormGroup} from '@angular/forms';
             </div>
           </div>
         </ng-container>
-        <button  type="button" (click)="toggleInput()">Toggle Branch ID</button>
+        <button type="button" (click)="toggleInput()">Toggle Branch ID</button>
 
         <div>
           <p>Errors: {{ myError.hasError('*', ['touched']) | json }}</p>
@@ -35,7 +43,8 @@ import {FormGroup} from '@angular/forms';
           placeholder="Manager Code"
           formControlName="code"
           [class.errors]="myError.hasError('*', ['dirty'])"
-          [class.no-errors]="myError.isValid('*', ['dirty'])">
+          [class.no-errors]="myError.isValid('*', ['dirty'])"
+        />
 
         <div ngxErrors="store.code" #myError="ngxErrors">
           <div class="error" ngxError="required" [when]="['dirty']">
@@ -50,7 +59,7 @@ import {FormGroup} from '@angular/forms';
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class StockBranchComponent {
   @Input() parent: FormGroup;

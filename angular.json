@@ -25,9 +25,7 @@
               "apps/ngxerrors/src/favicon.ico",
               "apps/ngxerrors/src/assets"
             ],
-            "styles": [
-              "apps/ngxerrors/src/styles.scss"
-            ],
+            "styles": ["apps/ngxerrors/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -58,9 +56,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -86,10 +82,7 @@
               "apps/ngxerrors/tsconfig.app.json",
               "apps/ngxerrors/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ngxerrors/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/ngxerrors/**/*"]
           }
         },
         "test": {
@@ -100,9 +93,7 @@
             "setupFile": "apps/ngxerrors/src/test-setup.ts",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/apps/ngxerrors"
-          ]
+          "outputs": ["coverage/apps/ngxerrors"]
         }
       },
       "tags": []
@@ -128,19 +119,12 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/ngxerrors-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ngxerrors-e2e/**/*"
-            ]
+            "tsConfig": ["apps/ngxerrors-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**/*"]
           }
         }
       },
-      "implicitDependencies": [
-        "ngxerrors"
-      ],
+      "implicitDependencies": ["ngxerrors"],
       "tags": []
     }
   }

@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
     <div>
       <stock-inventory></stock-inventory>
     </div>
-  `
+  `,
 })
 export class AppComponent {}

@@ -1,20 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   FormArray,
   Validators,
-  AbstractControl
+  AbstractControl,
 } from '@angular/forms';
 
-import {StockValidators} from './stock-inventory.validators';
+import { StockValidators } from './stock-inventory.validators';
 
-import {Observable, forkJoin} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import {StockInventoryService} from '../../services/stock-inventory.service';
+import { StockInventoryService } from '../../services/stock-inventory.service';
 
-import {Product, Item} from '../../models/product.interface';
+import { Product, Item } from '../../models/product.interface';
 
 @Component({
   selector: 'stock-inventory',
@@ -22,40 +22,34 @@ import {Product, Item} from '../../models/product.interface';
   template: `
     <div class="stock-inventory">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
-        <stock-branch
-          [parent]="form">
-        </stock-branch>
+        <stock-branch [parent]="form"> </stock-branch>
 
         <stock-selector
           [parent]="form"
           [products]="products"
-          (added)="addStock($event)">
+          (added)="addStock($event)"
+        >
         </stock-selector>
 
         <stock-products
           [parent]="form"
           [map]="productMap"
-          (removed)="removeStock($event)">
+          (removed)="removeStock($event)"
+        >
         </stock-products>
 
         <div class="stock-inventory__price">
-          Total: {{ total | currency:'USD' }}
+          Total: {{ total | currency: 'USD' }}
         </div>
 
         <div class="stock-inventory__buttons">
-          <button
-            type="submit"
-            [disabled]="form.invalid">
-            Order stock
-          </button>
+          <button type="submit" [disabled]="form.invalid">Order stock</button>
         </div>
 
         <pre>{{ form.value | json }}</pre>
-
       </form>
     </div>
-  `
+  `,
 })
 export class StockInventoryComponent implements OnInit {
   products: Product[];
@@ -70,21 +64,21 @@ export class StockInventoryComponent implements OnInit {
         branch: [
           '',
           [Validators.required, StockValidators.checkBranch],
-          [this.validateBranch.bind(this)]
+          [this.validateBranch.bind(this)],
         ],
         code: [
           '',
           [
             Validators.required,
             Validators.minLength(2),
-            Validators.maxLength(5)
-          ]
-        ]
+            Validators.maxLength(5),
+          ],
+        ],
       }),
       selector: this.createStock({}),
-      stock: this.fb.array([])
+      stock: this.fb.array([]),
     },
-    {validator: StockValidators.checkStockExists}
+    { validator: StockValidators.checkStockExists }
   );
 
   constructor(
@@ -98,19 +92,19 @@ export class StockInventoryComponent implements OnInit {
 
     forkJoin(cart, products).subscribe(
       ([cart, products]: [Item[], Product[]]) => {
-        const myMap = products.map<[number, Product]>(product => [
+        const myMap = products.map<[number, Product]>((product) => [
           product.id,
-          product
+          product,
         ]);
 
         this.productMap = new Map<number, Product>(myMap);
         this.products = products;
-        cart.forEach(item => this.addStock(item));
+        cart.forEach((item) => this.addStock(item));
 
         this.calculateTotal(this.form.get('stock').value);
         this.form
           .get('stock')
-          .valueChanges.subscribe(value => this.calculateTotal(value));
+          .valueChanges.subscribe((value) => this.calculateTotal(value));
       }
     );
   }
@@ -119,7 +113,7 @@ export class StockInventoryComponent implements OnInit {
     return this.stockService
       .checkBranchId(control.value)
       .pipe(
-        map((response: boolean) => (response ? null : {unknownBranch: true}))
+        map((response: boolean) => (response ? null : { unknownBranch: true }))
       );
   }
 
@@ -133,7 +127,7 @@ export class StockInventoryComponent implements OnInit {
   createStock(stock) {
     return this.fb.group({
       product_id: parseInt(stock.product_id, 10) || '',
-      quantity: stock.quantity || 10
+      quantity: stock.quantity || 10,
     });
   }
 
@@ -142,7 +136,7 @@ export class StockInventoryComponent implements OnInit {
     control.push(this.createStock(stock));
   }
 
-  removeStock({group, index}: {group: FormGroup; index: number}) {
+  removeStock({ group, index }: { group: FormGroup; index: number }) {
     const control = this.form.get('stock') as FormArray;
     control.removeAt(index);
   }
