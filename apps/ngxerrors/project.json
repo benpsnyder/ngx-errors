@@ -73,13 +73,12 @@
       }
     },
     "lint": {
-      "executor": "@angular-devkit/build-angular:tslint",
+      "executor": "@nrwl/linter:eslint",
       "options": {
-        "tsConfig": [
-          "apps/ngxerrors/tsconfig.app.json",
-          "apps/ngxerrors/tsconfig.spec.json"
-        ],
-        "exclude": ["**/node_modules/**", "!apps/ngxerrors/**/*"]
+        "lintFilePatterns": [
+          "apps/ngxerrors/src/**/*.ts",
+          "apps/ngxerrors/src/**/*.html"
+        ]
       }
     },
     "test": {

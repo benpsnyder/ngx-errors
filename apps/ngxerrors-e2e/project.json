@@ -17,10 +17,10 @@
       }
     },
     "lint": {
-      "executor": "@angular-devkit/build-angular:tslint",
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "tsConfig": ["apps/ngxerrors-e2e/tsconfig.e2e.json"],
-        "exclude": ["**/node_modules/**", "!apps/ngxerrors-e2e/**/*"]
+        "lintFilePatterns": ["apps/ngxerrors-e2e/**/*.{js,ts}"]
       }
     }
   },
