@@ -15,7 +15,7 @@ import { toArray } from './utils/toArray';
   exportAs: 'ngxErrors'
 })
 export class NgxErrorsDirective implements OnChanges, OnDestroy, AfterViewInit {
-  @Input('ngxErrors') private readonly controlName: string;
+  @Input('ngxErrors') controlName: string;
 
   public subject$: BehaviorSubject<ErrorDetails>;
   public control: AbstractControl;
